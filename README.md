@@ -212,11 +212,3 @@ Call `POST /api/auth/register` with:
 Then log in via `POST /api/auth/login` to receive an auth cookie for subsequent requests.
 
 ---
-
-## Known Limitations & Future Improvements
-
-- **Member deletion is unprotected** — the `DELETE /api/members/{id}` endpoint currently has no `[Authorize]` attribute, which should be fixed.
-- **No refresh tokens** — since the auth uses cookies, session expiry is handled by Identity defaults; this could be made configurable.
-- **No fine/late fee tracking** — the `DueDate` is recorded but overdue penalties are not currently enforced.
-- **No publisher CRUD endpoints** — publishers are referenced by ID when creating books but have no management endpoints.
-- **Cover image support** — a `CoverImageUrl` field exists in the `Book` model but is currently commented out.
